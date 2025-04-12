@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" id="html" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="./js/theme.js"></script>
+    <title>About</title>
+</head>
+<body class="container">
+    <div id="header"></div>
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="ratio ratio-16x9">
+                        <img src="./public/c01.jpg" class="d-block w-100 object-fit-cover rounded-4" alt="...">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                        <img src="./public/c02.jpg" class="d-block w-100 object-fit-cover rounded-4" alt="...">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                        <img src="./public/c03.jpg" class="d-block w-100 object-fit-cover rounded-4" alt="...">
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+              </div>
+        </div>
+        <div class="col">
+            <h2 class="fw-bold mb-3">Who we are?</h2>
+            <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac quam vitae arcu tincidunt vulputate eget ut ipsum. Nullam ut neque condimentum, pharetra eros a, congue tortor. Proin in velit eros. Aenean vehicula, mi ac egestas efficitur, elit ex fringilla velit, id imperdiet nisl elit eget enim. Nullam consequat dolor sit amet rhoncus lacinia. Aenean pulvinar ullamcorper ante. Etiam non lobortis ipsum. Cras metus nunc, lacinia non lobortis in, blandit id neque. Donec vestibulum porta orci non vestibulum. Phasellus porta sapien ut odio fermentum, quis pulvinar sem convallis. Morbi vitae lacinia nulla. Aenean eros nibh, ultricies sed augue nec, vulputate dictum orci. Nam et finibus mauris. Duis finibus ipsum nec orci pharetra, a blandit quam ultrices. Fusce sed consequat augue.
+            </p>
+            <p class="text-muted">
+                Etiam sed tortor at quam vestibulum rutrum. In massa nisi, auctor ut odio feugiat, cursus aliquet diam. Etiam risus libero, eleifend vitae tincidunt in, interdum vel odio. Nullam lectus dui, dictum a purus in, venenatis mollis nisl. Ut vel quam ac tortor gravida congue id ut orci. Ut vel turpis sodales, mattis dui eget, interdum enim. Praesent nec venenatis erat. Nam quis ultrices odio. 
+            </p>
+            <p class="text-muted">
+                Nullm vestibulum blandit leo sed aliquet. Nam congue dui eu pharetra euismod. Etiam elit nisi, varius id tempus sed, faucibus id enim. Pellentesque hendrerit aliquet ligula. Nunc ut sapien ultricies, sollicitudin nisi sed, pretium ante. Quisque venenatis et purus nec molestie. Nullam id hendrerit nulla. Ut auctor eget elit sed faucibus. Donec dui tellus, tempor vitae arcu vitae, finibus blandit metus.
+            </p>
+            <p class="text-muted">
+                Our team is available 24/7 to answer your questions, and we constantly work to improve our catalog based on your feedback.
+            </p>
+            <a href="contact.html" class="btn btn-outline-success mt-3">Contact Us</a>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+   
+    <script>
+        (async() => {
+            const header= await fetch("header.html");
+            document.getElementById("header").innerHTML=await header.text();
+
+            const footer= await fetch("footer.html");
+            document.getElementById("footer").innerHTML=await footer.text();
+           
+            themeControlInit();
+        })()
+    </script>
+</body>
+</html>
