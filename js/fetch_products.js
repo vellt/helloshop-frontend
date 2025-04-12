@@ -39,7 +39,7 @@ function productCard({product_id,name,image, price   }){
                 
                 <div class="row gx-1 mt-2">
                     <div class="col">
-                        <select class="form-select form-select-sm">
+                        <select id="mennyiseg_${product_id}" class="form-select form-select-sm">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -48,7 +48,7 @@ function productCard({product_id,name,image, price   }){
                         </select>
                     </div>
                    <div class="col ">
-                    <button class="btn w-100 bg-body-secondary text-body-emphasis btn-sm">Kosárba</button>
+                    <button onclick="addCard('${product_id}')" class="btn w-100 bg-body-secondary text-body-emphasis btn-sm">Kosárba</button>
                    </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ function productCardDiscount({product_id,name,image, price,discount   }){
                 
                 <div class="row gx-1 mt-2">
                     <div class="col">
-                        <select class="form-select form-select-sm">
+                        <select id="mennyiseg_${product_id}" class="form-select form-select-sm">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -86,10 +86,43 @@ function productCardDiscount({product_id,name,image, price,discount   }){
                         </select>
                     </div>
                    <div class="col ">
-                    <button class="btn w-100 bg-body-secondary text-body-emphasis btn-sm">Kosárba</button>
+                    <button onclick="addCard('${product_id}')" class="btn w-100 bg-body-secondary text-body-emphasis btn-sm">Kosárba</button>
                    </div>
                 </div>
             </div>
         </div>
     `
 }
+
+function addCard(id) {
+    console.log("Termék ID:", id);
+    const quantity = parseInt(document.getElementById(`mennyiseg_${id}`).value);
+    const product = products.find(x => x.product_id == id);
+  
+    if (!product) {
+      console.error("Termék nem található!");
+      return;
+    }
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    const existing = cart.find(item => item.product_id == product.product_id);
+  
+    if (existing) {
+        if(existing.quantity+quantity>5){
+            existing.quantity =5;
+        }else{
+            existing.quantity += quantity;
+        }
+      
+    } else {
+      cart.push({
+        ...product,
+        quantity: quantity
+      });
+    }
+  
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Kosár frissítve!");
+  }
+  
