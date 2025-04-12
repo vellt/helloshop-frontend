@@ -3,6 +3,7 @@
 
 **Funkciók:**
 - Termékek szerverről való lekérése
+- Termék kereső + szűrő
 - Termékek felvitele (Admin)
 - Termékek szerkesztése (Admin)
 - Termékek törlése (Admin)
