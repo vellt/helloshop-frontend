@@ -13,8 +13,47 @@
 </head>
 <body class="container">
     <div id="header"></div>
-    <div class="row row-cols-1 row-cols-lg-2">
-       
+    <h2 class="text-center mb-4  animate__animated animate__bounceInDown">Termékek szerkesztése</h2>
+
+      <!--  Új termék űrlap -->
+  <form id="newProductForm" class="row g-2 align-items-end mb-4 animate__animated animate__bounceInDown ">
+    <div class="col-md-3">
+      <label class="form-label">Név</label>
+      <input type="text" class="form-control" id="newName" required>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Ár</label>
+      <input type="number" class="form-control" id="newPrice" required>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Kedvezmény (%)</label>
+      <input type="number" class="form-control" id="newDiscount" value="0">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Kép</label>
+      <input type="file" class="form-control" id="newImage" accept="image/*" required>
+    </div>
+    <div class="col-md-2 d-grid">
+      <button type="submit" class="btn btn-success">+ Hozzáadás</button>
+    </div>
+  </form>
+
+    <div class="table-responsive  animate__animated animate__bounceInDown  ">
+      <table class="table table-bordered align-middle text-nowrap" style="min-width: 1000px;">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Kép</th>
+            <th>Név</th>
+            <th>Ár (Ft)</th>
+            <th>Kedvezmény (%)</th>
+            <th>Műveletek</th>
+          </tr>
+        </thead>
+        <tbody id="product-table-body" >
+          <!-- JS tölti majd fel a sorokat -->
+        </tbody>
+      </table>
     </div>
 
     <div id="footer"></div>
@@ -32,5 +71,6 @@
             eventListenerInit()
         })()
     </script>
+    <script src="./js/admin.js"></script>
 </body>
 </html>

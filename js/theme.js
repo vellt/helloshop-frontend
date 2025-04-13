@@ -1,18 +1,18 @@
 const html=document.getElementById("html")
 
 window.addEventListener('DOMContentLoaded', ()=>{
-   loadTheme(getCookie("theme")??"light");
+   loadTheme();
 })
 
 window.addEventListener('visibilitychange', ()=>{
-    loadTheme(getCookie("theme")??"light");
+    loadTheme();
 })
 
 const themeControlInit = ()=>{
     const changeTheme = document.getElementById("changeTheme");
     const icon = changeTheme.querySelector('i');
     changeTheme?.addEventListener('click', () => {
-        loadTheme(html.getAttribute('data-bs-theme'))
+        loadTheme()
         if(html.getAttribute('data-bs-theme')==="light"){
             icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
         }else{
@@ -21,7 +21,8 @@ const themeControlInit = ()=>{
     });
 };
 
-function loadTheme(theme){
+function loadTheme(){
+    const theme=getCookie("theme")??html.getAttribute('data-bs-theme');
     const newTheme=theme === 'light'?'dark':'light';
     html.setAttribute('data-bs-theme', newTheme);
     setCookie("theme",newTheme,7);
