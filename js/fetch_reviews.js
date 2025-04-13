@@ -3,7 +3,7 @@ const velemenyek= document.getElementById('velemenyek-tarolo');
 window.addEventListener('DOMContentLoaded', fetchReviews)
 
 async function fetchReviews(){
-    const result=await fetch('http://localhost:3000/api/reviews')
+    const result=await fetch('https://nodejs114.dszcbaross.edu.hu/api/reviews')
     const json=await result.json();
     displayReviews(json);
 }

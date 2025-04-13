@@ -15,7 +15,7 @@ async function sendCart({product_id, quantity} ) {
     formData.append("quantity", quantity);
   
     try {
-      const response = await fetch("http://localhost:3000/api/orders", {
+      const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/orders", {
         method: "POST",
         body: formData
       });
@@ -51,7 +51,7 @@ function cartCard({product_id,name,image, price,discount, quantity}){
     <tr class="align-middle">
         <td>
             <div class="ratio ratio-1x1">
-            <img src="http://localhost:3000/uploads/${image}" alt="" width="50" class="card-img-top object-fit-cover rounded-3y me-2">
+            <img src="https://nodejs114.dszcbaross.edu.hu/uploads/${image}" alt="" width="50" class="card-img-top object-fit-cover rounded-3y me-2">
             </div>
         </td>
         <td >${newPrice} Ft</td>

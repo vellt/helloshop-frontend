@@ -21,7 +21,7 @@ async function sendMessge(name, email, phone, message) {
     formData.append("message", message);
   
     try {
-      const response = await fetch("http://localhost:3000/api/messages", {
+      const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/messages", {
         method: "POST",
         body: formData
       });

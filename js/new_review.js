@@ -19,7 +19,7 @@ async function sendReview(name, rating, message) {
     formData.append("review", message);
   
     try {
-      const response = await fetch("http://localhost:3000/api/reviews", {
+      const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/reviews", {
         method: "POST",
         body: formData
       });

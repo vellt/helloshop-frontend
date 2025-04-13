@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/products";
+const API_URL = "https://nodejs114.dszcbaross.edu.hu/api/products";
 const tableBody = document.getElementById("product-table-body");
 const admin =JSON.parse(getCookie("admin"))||{};
 
@@ -23,7 +23,7 @@ async function loadProducts() {
       <tr>
         <td>${product.product_id}</td>
         <td>
-        <img src="http://localhost:3000/uploads/${product.image}" width="50" class="rounded" id="imgPreview_${product.product_id}">
+        <img src="https://nodejs114.dszcbaross.edu.hu/uploads/${product.image}" width="50" class="rounded" id="imgPreview_${product.product_id}">
             <label>
                 <i class="bi bi-paperclip fs-4"></i>
                 <input type="file" class="d-none" id="imgInput_${product.product_id}" accept="image/*" onchange="previewImage(event, ${product.product_id})">
@@ -70,7 +70,7 @@ function previewImage(event, id) {
         formData.append("image", currentImage); // nincs új kép => küldjük a régit
     }
   
-    const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+    const response = await fetch(`https://nodejs114.dszcbaross.edu.hu/api/products/${id}`, {
       method: "PUT",
       headers: {
         "x-admin-id":parseInt( admin.admin_id)
@@ -116,7 +116,7 @@ document.getElementById("newProductForm").addEventListener("submit", async (e) =
     formData.append("discount", discount);
     formData.append("image", image);
   
-    const response = await fetch("http://localhost:3000/api/products", {
+    const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/products", {
       method: "POST",
       headers: {
         "x-admin-id": admin.admin_id

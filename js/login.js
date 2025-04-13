@@ -9,7 +9,7 @@ loginButton.addEventListener('click', async()=>{
     formData.append("password", password.value);
   
     try {
-      const response = await fetch("http://localhost:3000/api/login", {
+      const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/login", {
         method: "POST",
         body: formData
       });

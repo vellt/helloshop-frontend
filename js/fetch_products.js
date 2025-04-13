@@ -3,7 +3,7 @@ const termekek= document.getElementById('termekek-tarolo');
 window.addEventListener('DOMContentLoaded', fetchProduct)
 let products=[];
 async function fetchProduct(){
-    const result=await fetch('http://localhost:3000/api/products')
+    const result=await fetch('https://nodejs114.dszcbaross.edu.hu/api/products')
     products=await result.json();
     displayProduct(products);
 }
@@ -26,7 +26,7 @@ function productCard({product_id,name,image, price   }){
     <div class="col ">
             <div>
                 <div class="ratio ratio-1x1">
-                    <img src="http://localhost:3000/uploads/${image}" alt="" class="card-img-top object-fit-cover rounded-4">
+                    <img src="https://nodejs114.dszcbaross.edu.hu/uploads/${image}" alt="" class="card-img-top object-fit-cover rounded-4">
                 </div>
                 
                 <div class="mt-2 mb-3 fw-semibold small">${name}</div>
@@ -62,7 +62,7 @@ function productCardDiscount({product_id,name,image, price,discount   }){
     <div class="col ">
             <div>
                 <div class="ratio ratio-1x1">
-                    <img src="http://localhost:3000/uploads/${image}" alt="" class="card-img-top object-fit-cover rounded-4">
+                    <img src="https://nodejs114.dszcbaross.edu.hu/uploads/${image}" alt="" class="card-img-top object-fit-cover rounded-4">
                 </div>
                 
                 <div class="mt-2 mb-3 fw-semibold small">${name}</div>

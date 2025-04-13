@@ -12,7 +12,7 @@ async function sendMail(mail) {
     formData.append("email", mail);
   
     try {
-      const response = await fetch("http://localhost:3000/api/newsletters", {
+      const response = await fetch("https://nodejs114.dszcbaross.edu.hu/api/newsletters", {
         method: "POST",
         body: formData
       });
